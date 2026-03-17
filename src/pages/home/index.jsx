@@ -1,22 +1,23 @@
-import {useNavigate } from 'react-router-dom';
-import { Link } from "react-router";
-function Home () {
+  import { Link } from "react-router";
 
-    const navigate = useNavigate();
+  import styles from './index.module.css';
 
-    return(
-        <div>
-            <h1>Aula de React com Vite JS </h1>
+  function Home() {
 
-            <button
-            onClick={() => navigate('/exemplo/1')}
-            >
-            Exemplo 1
-            </button>
-
-          <Link to="/exemplo/2"> Exemplo 2</Link>
-
-        </div>
+    return (
+      <div className={styles.container}>
+          <h1>Aula de React com Vite JS</h1>
+          <div className={styles.containerCards}>   
+            <h2>Exemplos</h2>       
+            <Link to="/exemplo/1">Exemplo 1 - Componente básico</Link>
+            <Link to="/exemplo/2">Exemplo 2 - Uso de module CSS</Link>          
+          </div>
+          
+          <div className={styles.containerCards}>    
+            <h2>Atividades</h2>      
+          </div>
+      </div>
     )
-}
-export default Home;
+  }
+
+  export default Home;

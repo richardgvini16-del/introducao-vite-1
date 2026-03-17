@@ -1,9 +1,10 @@
 function Exemplo01() {
     return (
-        <div>
-            <h1> Exemplo 1</h1>
-        <p> Conteudo minimo para componente React </p>
-        </div>
+        <>
+            <h1>Exemplo 1</h1>
+            <p>Conteúdo mínimo para componente React</p>
+        </>
     )
 }
+
 export default Exemplo01;
