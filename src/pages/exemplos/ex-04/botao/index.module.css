@@ -1,0 +1,22 @@
+.botao {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+.cadastrar {
+    background-color: forestgreen;
+}
+
+.editar {
+    background-color: coral;
+}
+.listar {
+    background-color: coral;
+}
+.excluir {
+    background-color: coral;
+}
+.cancelar {
+    background-color: coral;
+}
