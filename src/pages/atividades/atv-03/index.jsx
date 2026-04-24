@@ -1,23 +1,24 @@
-
 import { useState } from 'react';
-
+import Botao from './botao';
 import styles from './index.module.css';
 
-export default function Atividade03() {
+function Atividade03() {
+  const [acaoSelecionada, setAcaoSelecionada] = useState("Nenhuma");
 
-    const [num, setNum] = useState(10);
+  return (
+    <div className={styles.container}>
+      <h1>Atividade 3</h1>
+      <h2>Ação selecionada: {acaoSelecionada}</h2>
 
-    function somarUm () {
-        setNum(num + 1);
-    }
-
-    return (
-        <div className={styles.container}>
-            <label className={styles.texto}>{`Contador ${num}`}</label>
-            <label                
-                className={styles.botao} 
-                onClick={() => somarUm()}
-            >+1</label>
-        </div>
-    );
+      <div className={styles.botoes}>
+        <Botao texto="Cadastrar" tipo="cadastrar" aoClicar={() => setAcaoSelecionada("Cadastrar")} />
+        <Botao texto="Editar" tipo="editar" aoClicar={() => setAcaoSelecionada("Editar")} />
+        <Botao texto="Listar" tipo="listar" aoClicar={() => setAcaoSelecionada("Listar")} />
+        <Botao texto="Excluir" tipo="excluir" aoClicar={() => setAcaoSelecionada("Excluir")} />
+        <Botao texto="Cancelar" tipo="cancelar" aoClicar={() => setAcaoSelecionada("Cancelar")} />
+      </div>
+    </div>
+  );
 }
+
+export default Atividade03;
