@@ -4,27 +4,10 @@
     margin: 0.5rem;
 }
 
-<<<<<<< HEAD
 .mais {
     background-color: forestgreen;
 }
 
 .menos {
-=======
-.cadastrar {
-    background-color: forestgreen;
-}
-
-.editar {
-    background-color: coral;
-}
-.listar {
-    background-color: coral;
-}
-.excluir {
-    background-color: coral;
-}
-.cancelar {
->>>>>>> 4fca654b883cc7c2cc162630240c2b27e426a4c4
     background-color: coral;
 }

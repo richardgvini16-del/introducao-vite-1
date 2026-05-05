@@ -1,51 +1,61 @@
-import { useState } from "react";
-import styles from "./index.module.css";
+/**
+ * @file   src/pages/exemplos/ex-04/index.jsx
+ */
 
-export default function Ex04() {
-  const [acao, setAcao] = useState("Excluir");
+import { useState } from 'react';
+import styles from './index.module.css';
 
-  return (
-    <div className={styles.container}>
-      <h1>Atividade 3</h1>
+export default function Exemplo04() {
+    const [qtd, setQtd] = useState('');
+    const [produto, setProduto] = useState('');
+    const [lista, setLista] = useState([
+    ]);
 
-      <h2>Ação selecionada: {acao}</h2>
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-      <div>
-        <button
-          className={styles.cadastrar}
-          onClick={() => setAcao("Cadastrar")}
-        >
-          Cadastrar
-        </button>
+        if (!qtd || !produto) return;
 
-        <button
-          className={styles.editar}
-          onClick={() => setAcao("Editar")}
-        >
-          Editar
-        </button>
+        const novoItem = `${qtd}x ${produto}`;
 
-        <button
-          className={styles.listar}
-          onClick={() => setAcao("Listar")}
-        >
-          Listar
-        </button>
+        setLista([...lista, novoItem]);
+        setQtd('');
+        setProduto('');
+    };
 
-        <button
-          className={styles.excluir}
-          onClick={() => setAcao("Excluir")}
-        >
-          Excluir
-        </button>
+    return (
+        <div className={styles.container}>
+            <div className={styles.card}>
+                <h1>Atividade 4 - Lista de compra</h1>
 
-        <button
-          className={styles.cancelar}
-          onClick={() => setAcao("Cancelar")}
-        >
-          Cancelar
-        </button>
-      </div>
-    </div>
-  );
+                <form onSubmit={handleSubmit} className={styles.formulario}>
+                    <input
+                        type="number"
+                        placeholder="Qtd"
+                        value={qtd}
+                        onChange={(e) => setQtd(e.target.value)}
+                        className={styles.inputQtd}
+                    />
+
+                    <input
+                        type="text"
+                        placeholder="Produto..."
+                        value={produto}
+                        onChange={(e) => setProduto(e.target.value)}
+                        className={styles.inputProduto}
+                    />
+
+                    <button type="submit">Adicionar</button>
+                </form>
+
+                <div className={styles.lista}>
+                    {lista.map((item, index) => (
+                        <div key={index} className={styles.item}>
+                            {item}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
 }

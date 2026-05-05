@@ -1,31 +1,74 @@
 .container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 97vh;
+}
+
+.card {
+    background: #ffffff;
+    width: 650px;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h1 {
+    color: #8b0000;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.formulario {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.formulario input {
+    height: 55px;
+    border: 2px solid #ddd;
+    border-radius: 14px;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.inputQtd {
+    width: 90px;
+}
+
+.inputProduto {
+    flex: 1;
+}
+
+.formulario button {
+    background-color: #990000;
+    color: white;
+    border: 3px solid #111;
+    border-radius: 16px;
+    padding: 0 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.formulario button:hover {
+    transform: scale(1.03);
+}
+
+.lista {
+    display: flex;
     flex-direction: column;
-    text-align: center;
-    margin-top: 5rem;
+    gap: 1rem;
 }
 
-.cadastrar{
-    background-color: green;
-    margin: 0.5rem;
-}
-
-.editar{
-    background-color: aqua;
-    margin: 0.5rem;
-}
-
-.listar{
-    background-color: orange;
-    margin: 0.5rem;
-}
-
-.excluir{
-    background-color: tomato;
-    margin: 0.5rem;
-}
-
-.cancelar{
-    background-color: gray;
-    margin: 0.5rem;
+.item {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 1rem;
+    font-size: 1.2rem;
 }
